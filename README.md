@@ -2,6 +2,7 @@
 
 ## Vidly
 
-Author :  1. Nicolavickh Yohanes
-          2. Mulyadi Dharmawan
+Author :  
+1. Nicolavickh Yohanes
+2. Mulyadi Dharmawan
           
