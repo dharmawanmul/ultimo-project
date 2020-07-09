@@ -349,3 +349,6 @@ D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.pdb
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddGenreModel.resources
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddGenreId.resources
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.UpdateDateTimeNullable.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddGenreModel.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddGenreId.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.UpdateDateTimeNullable.resources
