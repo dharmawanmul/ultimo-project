@@ -22,9 +22,7 @@ namespace Vidly.Controllers
         // GET: Movies/Random
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(c => c.Genre).ToList();
-
-            return View(movies);
+            return View();
         }
 
         public ActionResult Details(int id)
