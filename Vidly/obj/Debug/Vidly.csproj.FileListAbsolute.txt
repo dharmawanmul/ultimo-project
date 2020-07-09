@@ -368,3 +368,4 @@ D:\Programming Projects\Github\ultimo-project\Vidly\bin\AutoMapper.xml
 D:\Programming Projects\Github\ultimo-project\Vidly\bin\System.Net.Http.Formatting.xml
 D:\Programming Projects\Github\ultimo-project\Vidly\bin\System.Web.Http.xml
 D:\Programming Projects\Github\ultimo-project\Vidly\bin\System.Web.Http.WebHost.xml
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.SeedUser.resources

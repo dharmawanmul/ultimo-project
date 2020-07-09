@@ -251,6 +251,10 @@
     <Compile Include="Migrations\202007090345386_UpdateDateTimeNullable.Designer.cs">
       <DependentUpon>202007090345386_UpdateDateTimeNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007090953280_SeedUser.cs" />
+    <Compile Include="Migrations\202007090953280_SeedUser.Designer.cs">
+      <DependentUpon>202007090953280_SeedUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -564,6 +568,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007090345386_UpdateDateTimeNullable.resx">
       <DependentUpon>202007090345386_UpdateDateTimeNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007090953280_SeedUser.resx">
+      <DependentUpon>202007090953280_SeedUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
