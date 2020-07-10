@@ -19,6 +19,7 @@ namespace Vidly.Models
         public byte MembershipTypeId { get; set; }
         [Display(Name = "Date of Birth")]
         [Min18YearsIfAMember]
-        public DateTime? Birthdate { get; set; }
+/*        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true, ConvertEmptyStringToNull = true)]
+*/        public DateTime? Birthdate { get; set; }
     }
 }

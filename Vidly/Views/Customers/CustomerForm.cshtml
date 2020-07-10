@@ -22,7 +22,9 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Birthdate)
-        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        <br />
+        @Html.TextBoxFor(m => m.Customer.Birthdate, "{0:MM/dd/yyyy}", new { id = "datePicker" } )
+        <br />
         @Html.ValidationMessageFor(m => m.Customer.Birthdate)
     </div>
     <div class="checkbox">
@@ -37,5 +39,21 @@
 
 @section scripts
 {
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.617/styles/kendo.default-v2.min.css" />
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.mobile.all.min.css">
+    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/angular.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/jszip.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#datePicker").kendoDatePicker();
+        });
+    </script>
     @Scripts.Render("~/bundles/jqueryval")
 }

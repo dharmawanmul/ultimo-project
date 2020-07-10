@@ -374,3 +374,9 @@ C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.addStore
 C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddPhoneNumberToUser.resources
 C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.addPhoneNumber.resources
 C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.changeNullableToPhoeNumber.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.SeedUser.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicense.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.addStoreManager.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddPhoneNumberToUser.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.addPhoneNumber.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.changeNullableToPhoeNumber.resources
