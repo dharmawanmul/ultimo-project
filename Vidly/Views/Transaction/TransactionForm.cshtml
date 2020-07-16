@@ -1,0 +1,56 @@
+﻿@model Vidly.ViewModels.TransactionFormViewModel
+
+@{
+    ViewBag.Title = "TransactionForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transaction Form</h2>
+@using (Html.BeginForm("Save", "Transaction"))
+{
+    @Html.HiddenFor(m => m.MovieId, new { @Name = "movieId" })
+    @Html.HiddenFor(m => m.TotalPrice, new { @Name = "totalPrice" })
+    @Html.HiddenFor(m => m.CustomerId, new { @Value = Model.Customer.Id })
+    @Html.HiddenFor(m => m.TransactionDate, new { @Value = DateTime.Now })
+    <p>@Model.Customer.Name </p>
+    <p>@DateTime.Now.ToString("dd/MMMM/yyyy")</p>
+
+    <label class="row">Movies :</label>
+    foreach (var c in Model.Schedules.Where(m => m.Day == (int)System.DateTime.Now.DayOfWeek))
+    {
+        <div class="form-check form-check-inline">
+            @Html.RadioButtonFor(m => m.MovieId, c.MovieId, new { @Class = "form-check-input", @Name = "inlineRadioOptions", @Id = "inlineRadio" + c.Movie.Id })
+            @Html.Label(c.Movie.Name, new { @Class = "form-check-label", @For = "inlineRadio" + c.Movie.Id, @Id = "lblRadio" + c.Movie.Id, @Value = c.Movie.Name })
+            @Html.Label(c.Movie.Price.ToString(), new { @Value = c.Movie.Price, @Name = "TotalPrice" + c.Movie.Id })
+        </div>
+    }
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4"></h1>
+            <p class="lead"></p>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" type="submit" id="saveBtn">Save</button>
+}
+
+@section scripts {
+    <script>
+        var id, name, price;
+        /*$('input:radio[name=inlineRadioOptions]:checked').change(function () {
+            val = $("input:radio[name=inlineRadioOptions]").val();
+            name = $('#inlineRadio' + val).val();
+        }); */
+        //radiobutton.change()
+        $("input[name='inlineRadioOptions']").click(function () {
+            id = $("input:radio[name=inlineRadioOptions]:checked").val();
+            name = document.getElementById("lblRadio" + id).innerHTML;
+            price = document.getElementsByName("TotalPrice" + id)[0].innerHTML;
+            $("input[name='movieId']").val(id);
+            $("input[name='totalPrice']").val(price);
+            $(".display-4").text("Movies : " + name);
+            $(".lead").text("Price : " + price);
+        });
+    </script>
+}

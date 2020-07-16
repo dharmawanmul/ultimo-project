@@ -20,6 +20,10 @@ namespace Vidly.Models
 
         [Display(Name = "Genre")]
         public int GenreId { get; set; }
-
+        public float Price { get; set; }
+        public Movie()
+        {
+            Id = 0;
+        }
     }
 }

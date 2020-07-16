@@ -24,11 +24,11 @@ namespace Vidly.Controllers
         {
             if (User.IsInRole(RoleName.CanManageMovies))
             {
-                return View("ReadOnlyList");
+                return View("List");
             }
             else
             {
-                return View("List");
+                return View("ReadOnlyList");
             }
         }
 

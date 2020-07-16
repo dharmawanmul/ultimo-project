@@ -1,0 +1,60 @@
+﻿@model Vidly.ViewModels.ScheduleFormViewModel
+
+@{
+    ViewBag.Title = "Add Schedule";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    @Model.Movie.Name
+</h2>
+
+@using (Html.BeginForm("Save", "Schedule"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Day)
+        @Html.DropDownListFor(m => m.Day,
+            new SelectList(
+                   new List<Object>
+                   {
+                       new { value = 1, text = "Monday" },
+                       new { value = 2, text = "Tuesday" },
+                       new { value = 3, text = "Wednesday" },
+                       new { value = 4, text = "Thursday" },
+                       new { value = 5, text = "Friday" },
+                       new { value = 6, text = "Saturday" },
+                       new { value = 7, text = "Sunday" },
+                   }, "value", "text"), "Select Schedule", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Day)
+    </div>
+    <div style="visibility: hidden">
+        @Html.TextBoxFor(m => m.MovieId, new { @Value = Model.MovieId })
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+}
+<br />
+<table class="table table-bordered table-hover" id="schedules">
+    <thead>
+        <tr>
+            <th>Schedule</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model.Jadwal)
+        {
+            <tr>
+                <td>
+                    @c.Day
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $("#schedules").DataTable();
+        });
+    </script>    
+}

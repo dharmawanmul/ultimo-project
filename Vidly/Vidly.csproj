@@ -184,14 +184,18 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CustomersController.cs" />
     <Compile Include="Controllers\Api\MoviesController.cs" />
+    <Compile Include="Controllers\Api\TransactionsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Dtos\GenreDto.cs" />
     <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Dtos\MovieDto.cs" />
+    <Compile Include="Dtos\TransactionDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,6 +279,46 @@
     <Compile Include="Migrations\202007100247143_changeNullableToPhoeNumber.Designer.cs">
       <DependentUpon>202007100247143_changeNullableToPhoeNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007100719238_AddSchedule.cs" />
+    <Compile Include="Migrations\202007100719238_AddSchedule.Designer.cs">
+      <DependentUpon>202007100719238_AddSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007100723289_AddSchedule1.cs" />
+    <Compile Include="Migrations\202007100723289_AddSchedule1.Designer.cs">
+      <DependentUpon>202007100723289_AddSchedule1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007100723528_SeedSchedule.cs" />
+    <Compile Include="Migrations\202007100723528_SeedSchedule.Designer.cs">
+      <DependentUpon>202007100723528_SeedSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007130411158_Test.cs" />
+    <Compile Include="Migrations\202007130411158_Test.Designer.cs">
+      <DependentUpon>202007130411158_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007130413186_Test2.cs" />
+    <Compile Include="Migrations\202007130413186_Test2.Designer.cs">
+      <DependentUpon>202007130413186_Test2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007130415201_ReseedSchedule.cs" />
+    <Compile Include="Migrations\202007130415201_ReseedSchedule.Designer.cs">
+      <DependentUpon>202007130415201_ReseedSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007140156501_AddTransactionTable.cs" />
+    <Compile Include="Migrations\202007140156501_AddTransactionTable.Designer.cs">
+      <DependentUpon>202007140156501_AddTransactionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007140211502_ChangedDayDataType.cs" />
+    <Compile Include="Migrations\202007140211502_ChangedDayDataType.Designer.cs">
+      <DependentUpon>202007140211502_ChangedDayDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007140234156_ChangedPrice.cs" />
+    <Compile Include="Migrations\202007140234156_ChangedPrice.Designer.cs">
+      <DependentUpon>202007140234156_ChangedPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007140352061_TEST3.cs" />
+    <Compile Include="Migrations\202007140352061_TEST3.Designer.cs">
+      <DependentUpon>202007140352061_TEST3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -285,9 +329,14 @@
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\Transaction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\NewCustomerViewModel.cs" />
+    <Compile Include="ViewModels\NewHomeViewModel.cs" />
+    <Compile Include="ViewModels\NewScheduleFormViewModel.cs" />
+    <Compile Include="ViewModels\NewTransactionViewModel.cs" />
     <Compile Include="ViewModels\VidlyViewModel.cs" />
     <Compile Include="ViewModels\NewMovieViewModel.cs" />
   </ItemGroup>
@@ -527,10 +576,13 @@
     <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
-    <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
     <Content Include="Views\Movies\ReadOnlyList.cshtml" />
+    <Content Include="Views\Schedule\ScheduleForm.cshtml" />
+    <Content Include="Views\Transaction\TransactionForm.cshtml" />
+    <Content Include="Views\Transaction\TransactionTable.cshtml" />
+    <Content Include="Views\Shared\Content.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -608,6 +660,36 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007100247143_changeNullableToPhoeNumber.resx">
       <DependentUpon>202007100247143_changeNullableToPhoeNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007100719238_AddSchedule.resx">
+      <DependentUpon>202007100719238_AddSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007100723289_AddSchedule1.resx">
+      <DependentUpon>202007100723289_AddSchedule1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007100723528_SeedSchedule.resx">
+      <DependentUpon>202007100723528_SeedSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007130411158_Test.resx">
+      <DependentUpon>202007130411158_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007130413186_Test2.resx">
+      <DependentUpon>202007130413186_Test2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007130415201_ReseedSchedule.resx">
+      <DependentUpon>202007130415201_ReseedSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140156501_AddTransactionTable.resx">
+      <DependentUpon>202007140156501_AddTransactionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140211502_ChangedDayDataType.resx">
+      <DependentUpon>202007140211502_ChangedDayDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140234156_ChangedPrice.resx">
+      <DependentUpon>202007140234156_ChangedPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007140352061_TEST3.resx">
+      <DependentUpon>202007140352061_TEST3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

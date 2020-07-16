@@ -380,3 +380,13 @@ D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.a
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddPhoneNumberToUser.resources
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.addPhoneNumber.resources
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.changeNullableToPhoeNumber.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddSchedule.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddSchedule1.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.SeedSchedule.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.Test.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.Test2.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ReseedSchedule.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddTransactionTable.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedDayDataType.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedPrice.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.TEST3.resources

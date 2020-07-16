@@ -30,3 +30,8 @@ textarea {
 .input-validation-error {
     border: 2px solid red;
 }
+
+.btn-group {
+    padding-right: 5px;
+    padding-bottom: 10px;
+}

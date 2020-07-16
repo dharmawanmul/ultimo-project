@@ -1,0 +1,48 @@
+﻿@model Vidly.ViewModels.TransactionFormViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transaction Table</h2>
+
+<table class="table table-bordered table-hover" id="transactions">
+    <thead>
+        <tr>
+            <th>Customer</th>
+            <th>Date</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            var table = $("#transactions").DataTable({
+                ajax: {
+                    url: "/api/transactions",
+                    dataSrc: ""
+                },
+                columns: [
+                    {
+                        data: "customer.name"
+                    },
+                    {
+                        data: "transactionDate"
+                    },
+                    {
+                        data: "totalPrice"
+                    }
+                ]
+            });
+        });
+
+        $('#transactions').on('click', 'tbody tr', function () {
+            alert("Abc");
+        });
+    </script>
+}
