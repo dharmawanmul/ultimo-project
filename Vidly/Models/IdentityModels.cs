@@ -34,6 +34,8 @@ namespace Vidly.Models
         public DbSet<MembershipType> MembershipTypes { get; set; }
         public DbSet<Genre> Genres { get; set; }
         public DbSet <Transaction> Transactions { get; set; }
+        public DbSet <NewTransaction> NewTransactions { get; set; }
+        public DbSet <TransactionDetails> TransactionDetails { get; set; }
         public DbSet<Schedule> Schedules { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -319,6 +319,14 @@
     <Compile Include="Migrations\202007140352061_TEST3.Designer.cs">
       <DependentUpon>202007140352061_TEST3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007160226329_newTables.cs" />
+    <Compile Include="Migrations\202007160226329_newTables.Designer.cs">
+      <DependentUpon>202007160226329_newTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007160228405_newTables1.cs" />
+    <Compile Include="Migrations\202007160228405_newTables1.Designer.cs">
+      <DependentUpon>202007160228405_newTables1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -328,9 +336,11 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\NewTransaction.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Models\TransactionDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\NewCustomerViewModel.cs" />
@@ -690,6 +700,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007140352061_TEST3.resx">
       <DependentUpon>202007140352061_TEST3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007160226329_newTables.resx">
+      <DependentUpon>202007160226329_newTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007160228405_newTables1.resx">
+      <DependentUpon>202007160228405_newTables1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

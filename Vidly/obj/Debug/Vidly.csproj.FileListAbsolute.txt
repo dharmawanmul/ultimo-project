@@ -390,3 +390,15 @@ D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.A
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedDayDataType.resources
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedPrice.resources
 D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.TEST3.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddSchedule.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddSchedule1.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.SeedSchedule.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.Test.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.Test2.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ReseedSchedule.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.AddTransactionTable.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedDayDataType.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedPrice.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.TEST3.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.newTables.resources
+C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.newTables1.resources
