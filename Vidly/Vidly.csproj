@@ -336,6 +336,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\MovieCheckBox.cs" />
     <Compile Include="Models\NewTransaction.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\Schedule.cs" />

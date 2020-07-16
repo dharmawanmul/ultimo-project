@@ -402,3 +402,5 @@ C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.ChangedP
 C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.TEST3.resources
 C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.newTables.resources
 C:\Users\Ultimo\Desktop\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.newTables1.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.newTables.resources
+D:\Programming Projects\Github\ultimo-project\Vidly\obj\Debug\Vidly.Migrations.newTables1.resources

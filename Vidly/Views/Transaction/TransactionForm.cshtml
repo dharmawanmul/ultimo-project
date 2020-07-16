@@ -3,6 +3,22 @@
 @{
     ViewBag.Title = "TransactionForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    //foreach (var m in Vidly.Models.Movie.GetMovies())
+    //{
+    //    if (true)
+    //    {
+
+    //    }
+    //    Model.MoviesCheckBox.Add(new Vidly.Models.MovieCheckBox { Id = m.Id, Name = m.Name, Value = false });
+    //}
+
+    //foreach (var m in Model.Schedules.Where(s => s.Day == (int)DateTime.Now.DayOfWeek))
+    //{
+    //    Model.MoviesCheckBox.Add(new Vidly.Models.MovieCheckBox { Id = c.Id, Name = m.Name, Value = false });
+    //}
+
+
+    Model.MoviesCheckBox.AddRange(Vidly.Models.Movie.GetMovies().Select(m => new Vidly.Models.MovieCheckBox { Id = m.Id, Name = m.Name, Value = false }));
 }
 
 <h2>Transaction Form</h2>
@@ -14,14 +30,20 @@
     @Html.HiddenFor(m => m.TransactionDate, new { @Value = DateTime.Now })
     <p>@Model.Customer.Name </p>
     <p>@DateTime.Now.ToString("dd/MMMM/yyyy")</p>
+    <br />
+    <p> Movies : </p>
 
-    <label class="row">Movies :</label>
-    foreach (var c in Model.Schedules.Where(m => m.Day == (int)System.DateTime.Now.DayOfWeek))
+
+    for (int m = 0; m < Model.MoviesCheckBox.Count; m++)
     {
-        <div class="form-check form-check-inline">
-            @Html.RadioButtonFor(m => m.MovieId, c.MovieId, new { @Class = "form-check-input", @Name = "inlineRadioOptions", @Id = "inlineRadio" + c.Movie.Id })
-            @Html.Label(c.Movie.Name, new { @Class = "form-check-label", @For = "inlineRadio" + c.Movie.Id, @Id = "lblRadio" + c.Movie.Id, @Value = c.Movie.Name })
-            @Html.Label(c.Movie.Price.ToString(), new { @Value = c.Movie.Price, @Name = "TotalPrice" + c.Movie.Id })
+        @Html.HiddenFor(c => c.MoviesCheckBox[m].Value);
+        @Html.HiddenFor(c => c.MoviesCheckBox[m].Name);
+
+        <div class="form-check">
+            @Html.CheckBoxFor(c => c.MoviesCheckBox[m].Value, new { @Class = "form-check-input", @Id = Model.MoviesCheckBox[m].Name })
+            @*@Html.LabelFor(c => c.MoviesCheckBox[m].Name, new { @Class = "form-check-label" })*@
+            @Html.Label(@Model.MoviesCheckBox[m].Name)
+            @*<span>@Model.MoviesCheckBox[m].Name</span>*@
         </div>
     }
 

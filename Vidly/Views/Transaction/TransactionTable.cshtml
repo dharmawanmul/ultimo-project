@@ -37,7 +37,23 @@
                     {
                         data: "totalPrice"
                     }
-                ]
+                ],
+                drawCallback: function (settings) {
+                    $('#transactions tr').each(function () {
+                        var Cell = $(this).find('td');
+                        Cell.parent().on('mouseover', Cell, function () {
+                            Cell.parent().css('background-color', '#158cba');
+                            Cell.parent().css('border', '1px solid #127ba3');
+                            Cell.parent().css('cursor', 'pointer');
+
+                            Cell.parent().bind("mouseout", function () {
+                                Cell.parent().css('background-color', '');
+                                Cell.parent().css('border', '');
+                                Cell.parent().css('cursor-color', '');
+                            });
+                        });
+                    });
+                }
             });
         });
 

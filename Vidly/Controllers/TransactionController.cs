@@ -26,10 +26,10 @@ namespace Vidly.Controllers
             var scheds = _context.Schedules.ToList();
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             var movie = _context.Movies.ToList();
-            var viewModel = new TransactionFormViewModel() { 
+            var viewModel = new TransactionFormViewModel() {
                 Schedules = scheds,
                 Customer = customer,
-                Movies = movie
+                MoviesCheckBox = new List<MovieCheckBox>()
             };
             return View("TransactionForm", viewModel);
         }
@@ -53,7 +53,13 @@ namespace Vidly.Controllers
             var transaction = _context.Transactions.ToList();
             var customer = _context.Customers.ToList();
             var movie = _context.Movies.ToList();
-            var viewModel = new TransactionFormViewModel();
+            var scheds = _context.Schedules.ToList();
+            var viewModel = new TransactionFormViewModel()
+            {
+                Transactions = transaction,
+                Customers = customer,
+                Schedules = scheds
+            };
             return View(viewModel);
         }
     }

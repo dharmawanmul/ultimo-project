@@ -13,11 +13,12 @@ namespace Vidly.ViewModels
         public Customer Customer { get; set; }
 
         public List<Transaction> Transactions { get; set; }
-        public List<Movie> Movies { get; set; }
+        //public List<Movie> Movies { get; set; }
         public List<Customer> Customers { get; set; }
 
         public List<Schedule> Schedules { get; set; }
 
+        public List<MovieCheckBox> MoviesCheckBox { get; set; }
 
         public int CustomerId { get; set; }
 
@@ -29,7 +30,6 @@ namespace Vidly.ViewModels
 
         public TransactionFormViewModel()
         {
-            
         }
     }
 }

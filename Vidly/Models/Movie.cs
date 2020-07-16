@@ -8,6 +8,13 @@ namespace Vidly.Models
 {
     public class Movie
     {
+        //private ApplicationDbContext _context;
+        //public Movie()
+        //{
+        //    _context = new ApplicationDbContext();
+        //}
+
+
         public int Id { get; set; }
         public string Name { get; set; }
         [Display(Name = "Release Date")]
@@ -24,6 +31,11 @@ namespace Vidly.Models
         public Movie()
         {
             Id = 0;
+        }
+
+        public static List<Movie> GetMovies() {
+            ApplicationDbContext _context = new ApplicationDbContext();
+            return _context.Movies.ToList();
         }
     }
 }
