@@ -36,11 +36,11 @@
 
     for (int m = 0; m < Model.MoviesCheckBox.Count; m++)
     {
-        @Html.HiddenFor(c => c.MoviesCheckBox[m].Value);
-        @Html.HiddenFor(c => c.MoviesCheckBox[m].Name);
 
         <div class="form-check">
-            @Html.CheckBoxFor(c => c.MoviesCheckBox[m].Value, new { @Class = "form-check-input", @Id = Model.MoviesCheckBox[m].Name })
+            @Html.HiddenFor(c => c.MoviesCheckBox[m].Id)
+            @Html.HiddenFor(c => c.MoviesCheckBox[m].Name)
+            @Html.CheckBoxFor(c => c.MoviesCheckBox[m].Value, new { @Class = "form-check-input" })
             @*@Html.LabelFor(c => c.MoviesCheckBox[m].Name, new { @Class = "form-check-label" })*@
             @Html.Label(@Model.MoviesCheckBox[m].Name)
             @*<span>@Model.MoviesCheckBox[m].Name</span>*@

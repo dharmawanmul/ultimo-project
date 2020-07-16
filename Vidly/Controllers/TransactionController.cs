@@ -26,7 +26,8 @@ namespace Vidly.Controllers
             var scheds = _context.Schedules.ToList();
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             var movie = _context.Movies.ToList();
-            var viewModel = new TransactionFormViewModel() {
+            var viewModel = new TransactionFormViewModel()
+            {
                 Schedules = scheds,
                 Customer = customer,
                 MoviesCheckBox = new List<MovieCheckBox>()
@@ -35,15 +36,30 @@ namespace Vidly.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(Transaction transaction)
+        public ActionResult Save(TransactionFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
             {
                 return HttpNotFound();
             }
-            _context.Transactions.Add(transaction);
+            var transaction = new NewTransaction()
+            {
+                CustomerId = viewModel.CustomerId,
+                TransactionDate = DateTime.Now
+            };
+            _context.NewTransactions.Add(transaction);
+            var details = new TransactionDetails()
+            {
+                NewTransactionId = transaction.Id,
+            };
+            foreach (var i in viewModel.MoviesCheckBox.Where(m => m.Value == true))
+            {
+                details.MovieId = i.Id;
+                _context.TransactionDetails.Add(details);
+                transaction.TotalPrice += Movie.GetMovies().SingleOrDefault(m => m.Id == i.Id).Price;
+                _context.SaveChanges();
+            }
 
-            _context.SaveChanges();
 
             return View("TransactionTable");
         }

@@ -15,7 +15,7 @@ namespace Vidly.Controllers.Api
         private ApplicationDbContext _context;
         public TransactionsController()
         {
-            _context = new ApplicationDbContext();
+            _context = new ApplicationDbContext(); 
         }
 
         protected override void Dispose(bool disposing)
@@ -23,22 +23,22 @@ namespace Vidly.Controllers.Api
             _context.Dispose();
         }
 
-        public IEnumerable<TransactionDto> GetTransactions()
+        public IEnumerable<NewTransactionDto> GetTransactions()
         {
-            return _context.Transactions.Include(t => t.Customer).Include(t => t.Movie).ToList().Select(Mapper.Map<Transaction, TransactionDto>);
+            return _context.NewTransactions.Include(t => t.Customer).ToList().Select(Mapper.Map<NewTransaction, NewTransactionDto>);
         }
 
         public IHttpActionResult GetTransaction(int id)
         {
 
-            var transaction = _context.Transactions.SingleOrDefault(c => c.Id == id);
+            var transaction = _context.NewTransactions.SingleOrDefault(c => c.Id == id);
 
             if (transaction == null)
             {
                 return NotFound();
             }
 
-            return Ok(Mapper.Map<Transaction, TransactionDto>(transaction));
+            return Ok(Mapper.Map<NewTransaction, NewTransactionDto>(transaction));
         }
     }
 }

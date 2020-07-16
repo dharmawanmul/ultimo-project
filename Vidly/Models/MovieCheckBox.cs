@@ -9,6 +9,6 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Boolean Value { get; set; }
+        public bool Value { get; set; }
     }
 }

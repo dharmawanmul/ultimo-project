@@ -8,7 +8,7 @@ namespace Vidly.ViewModels
 {
     public class TransactionFormViewModel
     {
-        public Transaction Transaction { get; set; }
+        public NewTransaction Transaction { get; set; }
         public Movie Movie { get; set; }
         public Customer Customer { get; set; }
 

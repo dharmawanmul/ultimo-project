@@ -22,6 +22,8 @@ namespace Vidly.App_Start
             Mapper.CreateMap<MovieDto, Movie>();
             Mapper.CreateMap<Transaction, TransactionDto>();
             Mapper.CreateMap<TransactionDto, Transaction>();
+            Mapper.CreateMap<NewTransaction, NewTransactionDto>();
+            Mapper.CreateMap<NewTransactionDto, NewTransaction>();
         }
     }
 }
