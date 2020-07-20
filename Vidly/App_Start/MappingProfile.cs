@@ -24,6 +24,8 @@ namespace Vidly.App_Start
             Mapper.CreateMap<TransactionDto, Transaction>();
             Mapper.CreateMap<NewTransaction, NewTransactionDto>();
             Mapper.CreateMap<NewTransactionDto, NewTransaction>();
+            Mapper.CreateMap<TransactionDetails, TransactionDetailsDto>();
+            Mapper.CreateMap<TransactionDetailsDto, NewTransaction>();
         }
     }
 }

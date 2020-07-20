@@ -18,47 +18,105 @@
     <tbody>
     </tbody>
 </table>
+@*
+<table class="table table-bordered table-hover" id="transactionsdetails">
+    <thead>
+        <tr>
+            <th>Movie</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+*@
 
-@section scripts {
-    <script>
-        $(document).ready(function () {
-            var table = $("#transactions").DataTable({
-                ajax: {
-                    url: "/api/transactions",
-                    dataSrc: ""
-                },
-                columns: [
-                    {
-                        data: "customer.name"
-                    },
-                    {
-                        data: "transactionDate"
-                    },
-                    {
-                        data: "totalPrice"
-                    }
-                ],
-                drawCallback: function (settings) {
-                    $('#transactions tr').each(function () {
-                        var Cell = $(this).find('td');
-                        Cell.parent().on('mouseover', Cell, function () {
-                            Cell.parent().css('background-color', '#158cba');
-                            Cell.parent().css('border', '1px solid #127ba3');
-                            Cell.parent().css('cursor', 'pointer');
+<div class="container">
+    <div class="card-group vgr-cards">
+        <div class="card">
 
-                            Cell.parent().bind("mouseout", function () {
-                                Cell.parent().css('background-color', '');
-                                Cell.parent().css('border', '');
-                                Cell.parent().css('cursor-color', '');
+            <div class="card-body">
+                <h4 class="card-title"></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+        @*<div class="modal-body">
+                <h5></h5>
+                <p>This triggers a popover on click.</p>
+                <hr>
+                <h5></h5>
+                <p>have tooltips on hover.</p>
+            </div>*@
+
+        @section scripts {
+            <script>
+                $(document).ready(function () {
+                    var table = $("#transactions").DataTable({
+                        ajax: {
+                            url: "/api/transactions",
+                            dataSrc: ""
+                        },
+                        columns: [
+                            {
+                                data: "customer.name"
+                            },
+                            {
+                                data: "transactionDate"
+                            },
+                            {
+                                data: "totalPrice"
+                            }
+                        ],
+                        drawCallback: function (settings) {
+                            $('#transactions tr').each(function () {
+                                var Cell = $(this).find('td');
+                                Cell.parent().on('mouseover', Cell, function () {
+                                    Cell.parent().css('background-color', '#158cba');
+                                    Cell.parent().css('border', '1px solid #127ba3');
+                                    Cell.parent().css('cursor', 'pointer');
+
+                                    Cell.parent().bind("mouseout", function () {
+                                        Cell.parent().css('background-color', '');
+                                        Cell.parent().css('border', '');
+                                        Cell.parent().css('cursor-color', '');
+                                    });
+                                });
+                            });
+                        }
+                    });
+
+                    $('#transactions').on('click', 'tbody tr', function () {
+                        $('.card-title').text('');
+                        $('.card-text').text('');
+                        var rowdata = table.row(this).data();
+                        var apidata;
+                        let url = "https://localhost:44342/api/transactiondetails/"
+                        $.getJSON(url, function (data) {
+                            result = data;
+                            $.each(data, function (key, value) {
+                                apidata = value;
+                                if (rowdata.customer.id == value.newTransaction.customerId) {
+                                    $(".card-title").append(value.movie.name + ' - ' + value.movie.price + "<br />");
+                                }
                             });
                         });
                     });
-                }
-            });
-        });
+                });
+            </script>
+        }
 
-        $('#transactions').on('click', 'tbody tr', function () {
-            alert("Abc");
-        });
-    </script>
-}
+        @*var tabledetail = $("#transactionsdetails").DataTable({
+                "bDestroy": true,
+                paging: false,
+                searching: false,
+                columns: [
+                    {
+                        data: apidata.movie.name
+                    },
+                    {
+                        data: apidata.movie.price
+                    }
+                ]
+            });*@
