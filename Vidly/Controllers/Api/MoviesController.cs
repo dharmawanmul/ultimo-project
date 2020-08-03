@@ -95,5 +95,16 @@ namespace Vidly.Controllers.Api
             _context.Movies.Remove(movieInDb);
             _context.SaveChanges();
         }
+
+
+        [HttpGet]
+        public IHttpActionResult GetMovies(int skip, int take)
+        {
+            var movies = _context.Movies.Include(m => m.Genre).ToList();
+            var total = movies.Count();
+            movies = movies.Skip(skip).Take(take).ToList();
+
+            return Ok(new { data = movies, recordsTotal = total, recordsFiltered = total });
+        }
     }
 }

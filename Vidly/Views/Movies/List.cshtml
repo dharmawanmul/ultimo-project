@@ -24,11 +24,37 @@
     <script>
         $(document).ready(function () {
             var table = $("#movies").DataTable({
-                ajax: {
-                    url: "/api/movies",
-                    dataSrc: ""
+                serverSide: true,
+                paging: true,
+                //lengthMenu: [[10, 20, 100], [10, 20, 100]],
+                pageLength: 2,
+                ajax: function (data, callback, settings) {
+                    console.log(data);
+                    $.ajax({
+                        url: `/api/movies/GetMovies?skip=${data.start}&take=${data.length}`,
+                        method: "GET",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        async: false,
+                        success: function (response) {
+                            callback({
+                                data: response.data,
+                                recordsTotal: response.recordsTotal,
+                                recordsFiltered: response.recordsFiltered
+                            });
+
+                            console.log(response.data);
+                        },
+                        error: function (response) {
+
+                        }
+                    });
                 },
                 columns: [
+                    //{
+                    //    data: "name",
+                    //    name: "name"
+                    //},
                     {
                         data: "name",
                         render: function (data, type, movie) {
@@ -64,6 +90,50 @@
                     }
                 });
             })
+
+            //var listDataSource = new kendo.data.DataSource({
+            //    transport: {
+            //        read: function (e) {
+            //            var filter = e.data.filter == undefined ? "" : JSON.stringify(e.data.filter);
+            //            var sort = e.data.sort == undefined ? "" : JSON.stringify(e.data.sort);
+            //            var page = e.data.page == undefined ? 1 : e.data.page;
+            //            var pageSize = e.data.pageSize == undefined ? 1 : e.data.pageSize;
+            //            var skip = e.data.skip == undefined ? 1 : e.data.skip;
+            //            var take = e.data.take == undefined ? 1 : e.data.take;
+
+            //            var data = ajaxRequest.Master.GetAllMasterProductDetail(skip, take);
+            //            e.success(data);
+
+            //        },
+            //        parameterMap: function (options, operation) {
+            //            if (operation !== "read" && options.models) {
+            //                return options.models[0];
+            //            }
+            //        }
+            //    },
+            //    batch: true,
+            //    page: 1,
+            //    pageSize: 2,
+            //    serverPaging: true,
+            //    serverSorting: true,
+            //    serverFiltering: true,
+            //    schema: {
+            //        data: "Data",
+            //        total: "Total",
+            //        model: {
+            //            id: "Id",
+            //            fields: {
+            //                Movies: { type: "string", editable: false },
+            //                Genre: { type: "string", editable: false },
+            //                Price: { type: "string", editable: false },
+            //                Date: { type: "string", editable: false },
+            //            }
+            //        }
+            //    },
+            //});
+            //console.log(listDataSource);
         });
+
+        
     </script>
 }

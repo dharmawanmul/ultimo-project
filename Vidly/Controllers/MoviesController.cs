@@ -4,6 +4,7 @@ using Vidly.Models;
 using System.Data.Entity;
 using Vidly.ViewModels;
 using System;
+using System.Web.Http;
 
 namespace Vidly.Controllers
 {
@@ -42,7 +43,7 @@ namespace Vidly.Controllers
             return View(movies);
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [System.Web.Http.Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genre = _context.Genres.ToList();
@@ -53,9 +54,9 @@ namespace Vidly.Controllers
             return View("MovieForm", viewModel);
         }
 
-        [HttpPost]
+        [System.Web.Http.HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [System.Web.Http.Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Save(Movie movie)
         {
             if (!ModelState.IsValid)
@@ -87,7 +88,7 @@ namespace Vidly.Controllers
             return RedirectToAction("Index", "Movies");
         }
 
-        [Authorize(Roles = RoleName.CanManageMovies)]
+        [System.Web.Http.Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult Edit(int id)
         {
             var movies = _context.Movies.SingleOrDefault(C => C.Id == id);
