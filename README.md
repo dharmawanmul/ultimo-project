@@ -1,6 +1,6 @@
-# Project Ultimo
+# [Ultimo Solutions] - Company Profile
 
-## Vidly
+## Magang
 
 Author :  
 1. Nicolavickh Yohanes
