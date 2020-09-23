@@ -1,5 +1,6 @@
-# [Ultimo Solutions] - Company Profile
+# [Ultimo Solutions] - MVC ASP.net
 
+## Vidly
 ## Magang
 
 Author :  
